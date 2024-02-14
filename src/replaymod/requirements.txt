@@ -1,0 +1,13 @@
+# https://pypi.org/project/nose2/
+# Released: Jan 28, 2024
+# Latest: nose2 0.14.1
+# nose2
+# https://pypi.org/project/Sphinx/
+# Released: Released: Sep 13, 2023
+# Latest: Sphinx 7.2.6 
+sphinx
+
+# https://pypi.org/project/pytest/
+# Released: Jan 27, 2024
+# Latest: pytest 8.0.0
+pytest

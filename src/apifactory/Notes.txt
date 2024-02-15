@@ -1,0 +1,16 @@
+(venv) apifactory $ pip-sync --python-executable ../venv/bin/python requirements.txt
+
+
+Add new package (aka pyyaml) and re-sync, only picks up new packages
+
+(venv) apifactory $ pip-sync --python-executable ../venv/bin/python requirements.txt
+Found existing installation: replay 0.1.0
+Can't uninstall 'replay'. No files were found to uninstall.
+Collecting pyyaml==6.0.1
+  Using cached PyYAML-6.0.1-cp311-cp311-macosx_10_9_x86_64.whl (187 kB)
+Installing collected packages: pyyaml
+Successfully installed pyyaml-6.0.1
+
+[notice] A new release of pip is available: 23.0.1 -> 24.0
+[notice] To update, run: pip install --upgrade pip
+(venv) Rachels-MacBook-Pro:apifactory racheldaloia$ 

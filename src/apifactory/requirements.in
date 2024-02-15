@@ -1,0 +1,6 @@
+colander
+pytest
+pydantic
+simplejson
+requests
+pyyaml

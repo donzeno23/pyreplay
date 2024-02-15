@@ -145,3 +145,89 @@ tests/test_cars.py::TestCarSuite::test_car_creation_for_brands[BMW] PASSED      
 tests/test_cars.py::TestCarSuite::test_car_creation_for_brands[Mercedes] FAILED                                                                       [100%]
 
 
+## When test has stdin
+```
+OSError: pytest: reading from stdin while output is captured!  Consider using `-s`.
+
+(venv) Rachels-MacBook-Pro:replaymod racheldaloia$ pytest -v -s -E stage1
+=========================================== test session starts ===========================================
+platform darwin -- Python 3.11.4, pytest-8.0.0, pluggy-1.4.0 -- /Users/racheldaloia/sandbox/pyreplay/src/venv/bin/python3.11
+cachedir: .pytest_cache
+rootdir: /Users/racheldaloia/sandbox/pyreplay/src/replaymod
+configfile: pytest.ini
+collecting ... This was instantiated??
+collected 16 items                                                                                        
+
+tests/test_advanced.py::AdvancedTestSuite::test_thoughts FAILED
+tests/test_basic.py::BasicTestSuite::test_absolute_truth_and_meaning PASSED
+tests/test_cars.py::test_if_apple_is_evil PASSED
+tests/test_cars.py::test_advanced_db_operation SKIPPED (JIRA: Advanced Operations issues - skip...)
+tests/test_cars.py::test_basic_db_operation PASSED
+tests/test_cars.py::test_custom_option Custom option value: default_value
+PASSED
+tests/test_cars.py::test_pass_gen FAILED
+tests/test_cars.py::test_web_framework 
+Setting up engine...
+Starting Up V6 engine...
+Engine startup successful
+continue...
+FAILED
+Tearing down resources...
+
+tests/test_cars.py::TestClass::test_startup PASSED
+tests/test_cars.py::TestClass::test_startup_and_more PASSED
+tests/test_cars.py::TestCarSuite::test_database_access PASSED
+tests/test_cars.py::TestCarSuite::test_car_creation_for_brands[] SKIPPED (test requires env in ...)
+tests/test_cars.py::TestCarSuite::test_car_creation_for_brands[BMW] SKIPPED (test requires env ...)
+tests/test_cars.py::TestCarSuite::test_car_creation_for_brands[Mercedes] SKIPPED (test requires...)
+tests/test_notification.py::NotificationTestSuite::test_absolute_truth_and_meaning PASSED
+tests/test_notification.py::NotificationTestSuite::test_notification_factory Enter the provider (FastNotify or SendBlue): SendBlue
+Formatting Email content
+PASSED
+
+================================================ FAILURES =================================================
+_____________________________________ AdvancedTestSuite.test_thoughts _____________________________________
+
+self = <test_advanced.AdvancedTestSuite testMethod=test_thoughts>
+
+    def test_thoughts(self):
+>       self.assertIsNone(replay.hmm())
+E       AttributeError: module 'replay' has no attribute 'hmm'
+
+tests/test_advanced.py:12: AttributeError
+______________________________________________ test_pass_gen ______________________________________________
+
+pass_gen = 'default_value'
+
+    def test_pass_gen(pass_gen) -> None:
+        custom_value = pass_gen
+>       assert custom_value == 'me2'
+E       AssertionError: assert 'default_value' == 'me2'
+E         
+E         - me2
+E         + default_value
+
+tests/test_cars.py:97: AssertionError
+___________________________________________ test_web_framework ____________________________________________
+
+setup_data = 'Engine Started'
+
+    @pytest.mark.webtest
+    def test_web_framework(setup_data) -> None:
+        # answer = calculate_startup(setup_data)
+        # assert answer == False
+        # print("*******************************")
+        # if answer:
+        if setup_data == 'Engine Started':
+            response = 200
+>           assert response == 404
+E           assert 200 == 404
+
+tests/test_cars.py:112: AssertionError
+========================================= short test summary info =========================================
+FAILED tests/test_advanced.py::AdvancedTestSuite::test_thoughts - AttributeError: module 'replay' has no attribute 'hmm'
+FAILED tests/test_cars.py::test_pass_gen - AssertionError: assert 'default_value' == 'me2'
+FAILED tests/test_cars.py::test_web_framework - assert 200 == 404
+================================= 3 failed, 9 passed, 4 skipped in 3.57s ==================================
+(venv) Rachels-MacBook-Pro:replaymod racheldaloia$ 
+```

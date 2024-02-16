@@ -1,7 +1,9 @@
 # Byte-compiled / optimized / DLL files
 **/__pycache__/
+__pycache__/
 *.py[cod]
 *$py.class
+**/music.cpython-311.pyc
 
 # C extensions
 *.so
@@ -127,6 +129,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+_virtualenv_path_extensions.pth
 
 # Spyder project settings
 .spyderproject

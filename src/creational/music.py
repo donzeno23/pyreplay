@@ -90,11 +90,12 @@ def create_local_music_service(local_music_location, **_ignored):
     '''
     return LocalService(local_music_location)
 
-
+'''
 factory = object_factory.ObjectFactory()
 factory.register_builder('SPOTIFY', SpotifyServiceBuilder())
 factory.register_builder('PANDORA', PandoraServiceBuilder())
 factory.register_builder('LOCAL', create_local_music_service)
+'''
 
 class MusicServiceProvider(object_factory.ObjectFactory):
     def get(self, service_id, **kwargs):

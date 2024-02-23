@@ -5,11 +5,14 @@ from context import replayfactory
 from replayfactory.replay_factory import ReplayFactory
 from replayfactory.remote_service_replay_registration import RemoteServiceLog
 from replayfactory.inmemory_replay_registration import InMemoryLog
+from replayfactory.file_replay_registration import FileLog
 
 
 replay = ReplayFactory()
 remote_replay = RemoteServiceLog()
+## remote_replay.register()
 inmemory_replay = InMemoryLog()
+file_replay = FileLog()
 
 @pytest.fixture
 def example_fixture():
@@ -44,5 +47,15 @@ def test_db_service():
 @pytest.mark.skip(reason="JIRA: File service not yet implemented!")
 def test_file_service():
     # replay.log('this is a test of the file system', 'File')
+    output = file_replay.log('testing 123!')
     assert True
-    
+
+def test_file_service_log():
+    # replay.log('this is a test of the file system', 'File')
+    output = file_replay.log('testing 123!')
+    assert output == "FILE_LOG:log"
+
+
+def test_file_service_transform():
+    output = file_replay.transform('transform 123!')
+    assert output == "transform 123!"

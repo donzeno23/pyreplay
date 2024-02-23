@@ -21,4 +21,8 @@ class LocalReplayExecutor(ReplayExecutorBase):
         err = stderr.decode('utf-8')
         return out, err
     
+
+    def download(self):
+        raise NotImplementedError
+    
     

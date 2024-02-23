@@ -31,3 +31,8 @@ class RemoteReplayExecutor:
     def download(self, source=""):
         print(f"Downloading from {source}")
         return f"Downloading from {source}"
+    
+
+    def transform(self, message):
+        print(f"Transforming message: {message}")
+        return f"Transforming mesage: {message}"

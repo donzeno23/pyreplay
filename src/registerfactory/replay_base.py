@@ -12,3 +12,9 @@ class ReplayExecutorBase(metaclass=ABCMeta):
     def run(self, command: str) -> Union[str, str]:
         """ Abstract method to run a command """
         pass
+
+
+    @abstractmethod
+    def download(self, source: str) -> str:
+        """ Abstract method to download a file """
+        pass

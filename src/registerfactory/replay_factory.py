@@ -36,6 +36,7 @@ class ReplayExecutorFactory:
             if name in cls.registry:
                 logger.warning(f"Replay Executor {name} already exists.  Will replace it'")
                 print(f"WARNING: Replay Executor {name} already exists.  Will replace it'")
+            print(f"DEBUG: Replay Executor {name} being added to registry.")
             cls.registry[name] = wrapped_class
             return wrapped_class
         

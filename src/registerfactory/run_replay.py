@@ -1,7 +1,7 @@
 from replay_factory import ReplayExecutorFactory
 # need to import executor in order to register it
-from replay_local import LocalReplayExecutor
-from replay_remote import RemoteReplayExecutor
+from apps.replay_local import LocalReplayExecutor
+from apps.replay_remote import RemoteReplayExecutor
 
 def run():
 
@@ -14,6 +14,8 @@ def run():
     remote_out = remote.run('ls -l')
     print(remote_out)
     remote.download("database")
+
+    remote.transform("XYZ")
 
 
 if __name__ == '__main__':

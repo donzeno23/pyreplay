@@ -10,7 +10,6 @@ class ReplayOperations(ABC):
 
     @abstractmethod
     def log(self, message):
-        print("logging has started...")
         pass
 
     @abstractmethod
@@ -19,4 +18,8 @@ class ReplayOperations(ABC):
 
     @abstractmethod
     def transfer(self):
+        pass
+
+    @abstractmethod
+    def upload(self):
         pass

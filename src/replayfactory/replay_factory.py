@@ -29,8 +29,12 @@ class ReplayFactory(ReplayOperations):
     def transfer(self, protocol):
         print(f"transfer protocol is {protocol}")
 
+    def upload(self, _file):
+        print(f"uploading file: {_file}")
+
     @staticmethod
     def register(logger_medium, instance):
+        import pdb;pdb.set_trace()
         print(f"register medium: {logger_medium} for instance: {instance}")
         if logger_medium is not None and instance is not None:
             ReplayFactory.instances[logger_medium] = instance

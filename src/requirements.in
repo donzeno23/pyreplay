@@ -5,4 +5,5 @@ simplejson
 requests
 pyyaml
 sphinx
+polars
 click

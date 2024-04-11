@@ -38,6 +38,8 @@ packaging==23.2
     #   sphinx
 pluggy==1.4.0
     # via pytest
+polars==0.20.19
+    # via -r requirements.in
 pydantic==2.6.1
     # via -r requirements.in
 pydantic-core==2.16.2

@@ -4,7 +4,7 @@ logging.basicConfig(filename='example.log', encoding='utf-8', level=logging.DEBU
 logger = logging.getLogger(__name__)
 
 from collections.abc import Callable
-from replay_base import ReplayExecutorBase
+from registerfactory.replay_base import ReplayExecutorBase
 
 class ReplayExecutorFactory:
     """ The factory class for creating executors """
